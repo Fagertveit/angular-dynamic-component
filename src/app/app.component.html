@@ -1,3 +1,50 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <h1>
+    Dynamic component POC
+  </h1>
+
+  <dynamic-form [name]="'Glenn'" [email]="'glenn.edberg@cgi.com'" [description]="'It\'s super dynamic!!'" (onSubmit)="submitForm($event)"></dynamic-form>
+
+  <br/><br/>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Dynamic Form implementation</h3>
+    </div>
+    <div class="panel-body">
+      <p>The dynamic form implementation is based on the documentation provided from <a href="https://angular.io/guide/dynamic-component-loader#final-ad-banner" target="_blank">Angular.io</a>, we have 2 different form components that applies a interface for input/output. These live inside a dynamic component that enforces the same setup of interface parameters.</p>
+      <p>We choose the form based on the setup in <code>config.service.ts</code> and the dynamic-form component will load the selected component through the <code>ngOnInit</code> method.</p>
+      <p>To make this work we need a couple of ingredients which I will go through with description attached</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width: 300px;">base-anchor.directive.ts</td>
+            <td>This directive gives us access to the DOM, and with this reference we have an anchor point where we can snap our dynamic component.</td>
+          </tr>
+          <tr>
+            <td style="width: 300px;">dynamic-form.class.ts</td>
+            <td>This acts like a constructor for our dynamic component, when fetching the config settings we create a new instance using this class <code>new DynamicFormClass(Form1Component)</code>.</td>
+          </tr>
+          <tr>
+            <td style="width: 300px;">dynamic-form.interface.ts</td>
+            <td>This is the interface for the dynamic component, and it's anatomy will be enforced onto all the implementations of the dynamic components, you can use required and optional members here.</td>
+          </tr>
+          <tr>
+            <td style="width: 300px;">dynamic-form.component.ts</td>
+            <td>This is the parent component for the dynamic components, this is where the magic happens, on initializing the view we load the selected component into the anchorpoint provided by the aforementioned directive. We also seed the set component with it's input/outputs. Here we also hold a reference to the component in code, so input and outputs are set programmatically (see code commentary for specifics).</td>
+          </tr>
+          <tr>
+            <td style="width: 300px;">form1.component.ts / form2.component.ts</td>
+            <td>These are the components that we can use with the dynamic-form component, these enforce the interface and have similar properties and functionality. We need to implement the requested members, and can implement the optional if needed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
