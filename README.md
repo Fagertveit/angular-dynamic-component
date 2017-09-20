@@ -1,27 +1,14 @@
-# AngularDynamicComponent
+# Angular Dynamic Component POC
+
+This project was created to experiment and research how to handle dynamic components within an Angular app. The project is base on having two different forms that can be used within a dynamic component base on a service configuration. To gain more insight into the solution, please pull the repo and start it. It's based on a regular angular-cli setup, so the instructions bellow will be applicable for the solution.
+
+## Agular-cli
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Further help
 

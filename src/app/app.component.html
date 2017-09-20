@@ -15,6 +15,7 @@
       <p>The dynamic form implementation is based on the documentation provided from <a href="https://angular.io/guide/dynamic-component-loader#final-ad-banner" target="_blank">Angular.io</a>, we have 2 different form components that applies a interface for input/output. These live inside a dynamic component that enforces the same setup of interface parameters.</p>
       <p>We choose the form based on the setup in <code>config.service.ts</code> and the dynamic-form component will load the selected component through the <code>ngOnInit</code> method.</p>
       <p>To make this work we need a couple of ingredients which I will go through with description attached</p>
+      <p> Open console to see response from form submittion</p>
       <table class="table">
         <thead>
           <tr>
@@ -41,7 +42,7 @@
           </tr>
           <tr>
             <td style="width: 300px;">form1.component.ts / form2.component.ts</td>
-            <td>These are the components that we can use with the dynamic-form component, these enforce the interface and have similar properties and functionality. We need to implement the requested members, and can implement the optional if needed</td>
+            <td>These are the components that we can use with the dynamic-form component, these enforce the interface and have similar properties and functionality. We need to implement the requested members, and can implement the optional if needed, Something to keep in mind with these is that they needs to be defined as <code>entryComponents</code> in the module decorator (see <code>app.module.ts</code> for current implementation).</td>
           </tr>
         </tbody>
       </table>
